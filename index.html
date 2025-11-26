@@ -1,0 +1,707 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Meu Portfólio</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+     <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Swiper CDN -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css"/>
+    <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+    <script>
+        tailwind.config = {
+            darkMode: 'class',
+            theme: {
+                extend: {
+                    colors: {
+                        primary: {
+                            50: '#f0f9ff',
+                            100: '#e0f2fe',
+                            200: '#0B1E3A',
+                            300: '#091A34',
+                            400: '#08152D',
+                            500: '#0ea5e9',
+                            600: '#061127',
+                            700: '#051328',
+                            800: '#040F22',
+                            900: '#051328',
+                        }
+                    }
+                }
+            }
+        }
+    </script>
+    
+    <style>
+        html, body {
+        height: 100%;
+        margin: 0;
+        padding: 0;
+        display: flex;
+        flex-direction: column;
+        }
+        main {
+        flex: 1;
+        }
+        .card-hover {
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+        .card-hover:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
+        }
+        .skill-icon {
+            transition: transform 0.3s ease;
+        }
+        .skill-icon:hover {
+            transform: scale(1.1);
+        }
+        .btn-hover {
+            transition: all 0.3s ease;
+        }
+        .btn-hover:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+        }
+    </style>
+</head>
+<body class="bg-white dark:bg-gray-900 text-gray-800 dark:text-gray-200 transition-colors duration-300">
+    <!-- Header Fixo -->
+    <header class="fixed w-full bg-white/90 dark:bg-gray-900/90 backdrop-blur-sm z-50 border-b border-gray-200 dark:border-gray-800">
+        <div class="container mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between items-center py-4">
+                <a href="#" class="text-2xl font-bold text-primary-600 dark:text-primary-400">Meu Portfólio</a>
+                
+                <nav class="hidden md:flex space-x-8">
+                    <a href="#inicio" class="text-gray-700 dark:text-gray-300 hover:text-primary-600 dark:hover:text-primary-400 transition-colors">Início</a>
+                    <a href="#projetos" class="text-gray-700 dark:text-gray-300 hover:text-primary-600 dark:hover:text-primary-400 transition-colors">Projetos</a>
+                    <a href="#sobre" class="text-gray-700 dark:text-gray-300 hover:text-primary-600 dark:hover:text-primary-400 transition-colors">Sobre Mim</a>
+                    <a href="#servicos" class="text-gray-700 dark:text-gray-300 hover:text-primary-600 dark:hover:text-primary-400 transition-colors">Serviços</a>
+                    <a href="#contacto" class="text-gray-700 dark:text-gray-300 hover:text-primary-600 dark:hover:text-primary-400 transition-colors">Contacto</a>
+                </nav>
+                
+                <button id="mobile-menu-button" class="md:hidden text-gray-700 dark:text-gray-300">
+                    <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16" />
+                    </svg>
+                </button>
+            </div>
+        </div>
+        
+        <!-- Menu Mobile -->
+        <div id="mobile-menu" class="hidden md:hidden bg-white dark:bg-gray-900 border-t border-gray-200 dark:border-gray-800">
+            <div class="container mx-auto px-4 py-4 flex flex-col space-y-4">
+                <a href="#inicio" class="text-gray-700 dark:text-gray-300 hover:text-primary-600 dark:hover:text-primary-400 transition-colors py-2">Início</a>
+                <a href="#projetos" class="text-gray-700 dark:text-gray-300 hover:text-primary-600 dark:hover:text-primary-400 transition-colors py-2">Projetos</a>
+                <a href="#sobre" class="text-gray-700 dark:text-gray-300 hover:text-primary-600 dark:hover:text-primary-400 transition-colors py-2">Sobre Mim</a>
+                  <a href="#servicos" class="text-gray-700 dark:text-gray-300 hover:text-primary-600 dark:hover:text-primary-400 transition-colors py-2">Serviços</a>
+                <a href="#contacto" class="text-gray-700 dark:text-gray-300 hover:text-primary-600 dark:hover:text-primary-400 transition-colors py-2">Contacto</a>
+            </div>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section id="inicio" class="pt-32 pb-20 bg-[url('/assets/logo-dark.png')] bg-cover bg-center bg-no-repeat">
+        <div class="container mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex flex-col md:flex-row items-center justify-between">
+                <div class="md:w-1/2 mb-10 md:mb-0">
+                    <h1 class="text-4xl text-white sm:text-5xl font-bold mb-6">Olá, eu sou a <span class="text-yellos-600 dark:text-yellow-400">Eng. Ilda Pedro</span></h1>
+                    <p class="text-xl text-gray-100 dark:text-gray-400 mb-8">Desenvolvedora Full Stack Web e Data Full Stack, com paixão por criar soluções digitais elegantes e funcionais.</p>
+                    <a href="#projetos" class="inline-block bg-primary-600 hover:bg-primary-700 text-white font-medium py-3 px-6 rounded-lg btn-hover">Ver Currículo</a>
+                </div>
+                
+                <div class="md:w-2/5 flex justify-center">
+                    <div class="relative w-64 h-64 rounded-full overflow-hidden border-4 border-white dark:border-gray-800 shadow-xl">
+                        <img src="assets/foto-perfil.png" alt="Foto profissional de desenvolvedor com fundo limpo" class="w-full h-full object-cover">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Projetos Section -->
+    <section id="projetos" class="py-20 bg-white dark:bg-gray-900">
+        <div class="container mx-auto px-4 sm:px-6 lg:px-8">
+            <h2 class="text-3xl font-bold text-center mb-4">Meus Projetos</h2>
+            <p class="text-gray-600 dark:text-gray-400 text-center mb-12 max-w-2xl mx-auto">Aqui estão alguns dos meus trabalhos mais recentes que demonstram minhas habilidades e experiência.</p>
+            
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <!-- Projeto 1 -->
+                <div class="bg-gray-50 dark:bg-gray-800 rounded-xl overflow-hidden card-hover border border-gray-200 dark:border-gray-700">
+                    <div class="h-48 overflow-hidden">
+                        <img src="https://placeholder-image-service.onrender.com/image/400x250?prompt=E-commerce%20website%20dashboard%20with%20modern%20design&id=project-1" alt="Dashboard de site e-commerce com design moderno" class="w-full h-full object-cover">
+                    </div>
+                    <div class="p-6">
+                        <h3 class="text-xl font-semibold mb-2">Sistema E-commerce</h3>
+                        <p class="text-gray-600 dark:text-gray-400 mb-4">Plataforma completa de e-commerce com painel administrativo e integração de pagamentos.</p>
+                        <div class="flex flex-wrap gap-2 mb-4">
+                            <span class="bg-primary-100 dark:bg-primary-900/30 text-primary-800 dark:text-primary-200 text-sm px-3 py-1 rounded-full">React</span>
+                            <span class="bg-primary-100 dark:bg-primary-900/30 text-primary-800 dark:text-primary-200 text-sm px-3 py-1 rounded-full">Node.js</span>
+                            <span class="bg-primary-100 dark:bg-primary-900/30 text-primary-800 dark:text-primary-200 text-sm px-3 py-1 rounded-full">MongoDB</span>
+                        </div>
+                        <div class="flex space-x-4">
+                            <a href="#" class="text-primary-600 dark:text-primary-400 hover:underline">GitHub</a>
+                            <a href="#" class="text-primary-600 dark:text-primary-400 hover:underline">Demo</a>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Projeto 2 -->
+                <div class="bg-gray-50 dark:bg-gray-800 rounded-xl overflow-hidden card-hover border border-gray-200 dark:border-gray-700">
+                    <div class="h-48 overflow-hidden">
+                        <img src="https://placeholder-image-service.onrender.com/image/400x250?prompt=Mobile%20app%20interface%20for%20task%20management&id=project-2" alt="Interface de aplicativo móvel para gestão de tarefas" class="w-full h-full object-cover">
+                    </div>
+                    <div class="p-6">
+                        <h3 class="text-xl font-semibold mb-2">App de Tarefas</h3>
+                        <p class="text-gray-600 dark:text-gray-400 mb-4">Aplicativo móvel para gestão de tarefas com sincronização em tempo real.</p>
+                        <div class="flex flex-wrap gap-2 mb-4">
+                            <span class="bg-primary-100 dark:bg-primary-900/30 text-primary-800 dark:text-primary-200 text-sm px-3 py-1 rounded-full">React Native</span>
+                            <span class="bg-primary-100 dark:bg-primary-900/30 text-primary-800 dark:text-primary-200 text-sm px-3 py-1 rounded-full">Firebase</span>
+                            <span class="bg-primary-100 dark:bg-primary-900/30 text-primary-800 dark:text-primary-200 text-sm px-3 py-1 rounded-full">Redux</span>
+                        </div>
+                        <div class="flex space-x-4">
+                            <a href="#" class="text-primary-600 dark:text-primary-400 hover:underline">GitHub</a>
+                            <a href="#" class="text-primary-600 dark:text-primary-400 hover:underline">Demo</a>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Projeto 3 -->
+                <div class="bg-gray-50 dark:bg-gray-800 rounded-xl overflow-hidden card-hover border border-gray-200 dark:border-gray-700">
+                    <div class="h-48 overflow-hidden">
+                        <img src="https://placeholder-image-service.onrender.com/image/400x250?prompt=Analytics%20dashboard%20with%20charts%20and%20graphs&id=project-3" alt="Dashboard analítico com gráficos e visualizações de dados" class="w-full h-full object-cover">
+                    </div>
+                    <div class="p-6">
+                        <h3 class="text-xl font-semibold mb-2">Dashboard Analítico</h3>
+                        <p class="text-gray-600 dark:text-gray-400 mb-4">Sistema de visualização de dados com gráficos interativos e relatórios personalizáveis.</p>
+                        <div class="flex flex-wrap gap-2 mb-4">
+                            <span class="bg-primary-100 dark:bg-primary-900/30 text-primary-800 dark:text-primary-200 text-sm px-3 py-1 rounded-full">Vue.js</span>
+                            <span class="bg-primary-100 dark:bg-primary-900/30 text-primary-800 dark:text-primary-200 text-sm px-3 py-1 rounded-full">D3.js</span>
+                            <span class="bg-primary-100 dark:bg-primary-900/30 text-primary-800 dark:text-primary-200 text-sm px-3 py-1 rounded-full">Express</span>
+                        </div>
+                        <div class="flex space-x-4">
+                            <a href="#" class="text-primary-600 dark:text-primary-400 hover:underline">GitHub</a>
+                            <a href="#" class="text-primary-600 dark:text-primary-400 hover:underline">Demo</a>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Projeto 4 -->
+                <div class="bg-gray-50 dark:bg-gray-800 rounded-xl overflow-hidden card-hover border border-gray-200 dark:border-gray-700">
+                    <div class="h-48 overflow-hidden">
+                        <img src="https://placeholder-image-service.onrender.com/image/400x250?prompt=Blog%20website%20with%20modern%20layout%20and%20typography&id=project-4" alt="Site de blog com layout moderno e tipografia elegante" class="w-full h-full object-cover">
+                    </div>
+                    <div class="p-6">
+                        <h3 class="text-xl font-semibold mb-2">Plataforma de Blog</h3>
+                        <p class="text-gray-600 dark:text-gray-400 mb-4">Sistema de publicação de artigos com editor rico e sistema de comentários.</p>
+                        <div class="flex flex-wrap gap-2 mb-4">
+                            <span class="bg-primary-100 dark:bg-primary-900/30 text-primary-800 dark:text-primary-200 text-sm px-3 py-1 rounded-full">Next.js</span>
+                            <span class="bg-primary-100 dark:bg-primary-900/30 text-primary-800 dark:text-primary-200 text-sm px-3 py-1 rounded-full">GraphQL</span>
+                            <span class="bg-primary-100 dark:bg-primary-900/30 text-primary-800 dark:text-primary-200 text-sm px-3 py-1 rounded-full">PostgreSQL</span>
+                        </div>
+                        <div class="flex space-x-4">
+                            <a href="#" class="text-primary-600 dark:text-primary-400 hover:underline">GitHub</a>
+                            <a href="#" class="text-primary-600 dark:text-primary-400 hover:underline">Demo</a>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Projeto 5 -->
+                <div class="bg-gray-50 dark:bg-gray-800 rounded-xl overflow-hidden card-hover border border-gray-200 dark:border-gray-700">
+                    <div class="h-48 overflow-hidden">
+                        <img src="https://placeholder-image-service.onrender.com/image/400x250?prompt=Landing%20page%20for%20saas%20product%20with%20testimonials&id=project-5" alt="Página de destino para produto SaaS com depoimentos e recursos" class="w-full h-full object-cover">
+                    </div>
+                    <div class="p-6">
+                        <h3 class="text-xl font-semibold mb-2">Site SaaS</h3>
+                        <p class="text-gray-600 dark:text-gray-400 mb-4">Landing page completa para produto SaaS com integração de newsletter e analytics.</p>
+                        <div class="flex flex-wrap gap-2 mb-4">
+                            <span class="bg-primary-100 dark:bg-primary-900/30 text-primary-800 dark:text-primary-200 text-sm px-3 py-1 rounded-full">HTML/CSS</span>
+                            <span class="bg-primary-100 dark:bg-primary-900/30 text-primary-800 dark:text-primary-200 text-sm px-3 py-1 rounded-full">JavaScript</span>
+                            <span class="bg-primary-100 dark:bg-primary-900/30 text-primary-800 dark:text-primary-200 text-sm px-3 py-1 rounded-full">Netlify</span>
+                        </div>
+                        <div class="flex space-x-4">
+                            <a href="#" class="text-primary-600 dark:text-primary-400 hover:underline">GitHub</a>
+                            <a href="#" class="text-primary-600 dark:text-primary-400 hover:underline">Demo</a>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Projeto 6 -->
+                <div class="bg-gray-50 dark:bg-gray-800 rounded-xl overflow-hidden card-hover border border-gray-200 dark:border-gray-700">
+                    <div class="h-48 overflow-hidden">
+                        <img src="https://placeholder-image-service.onrender.com/image/400x250?prompt=API%20documentation%20interface%20with%20code%20examples&id=project-6" alt="Interface de documentação de API com exemplos de código e endpoints" class="w-full h-full object-cover">
+                    </div>
+                    <div class="p-6">
+                        <h3 class="text-xl font-semibold mb-2">API RESTful</h3>
+                        <p class="text-gray-600 dark:text-gray-400 mb-4">API robusta com documentação interativa, autenticação JWT e rate limiting.</p>
+                        <div class="flex flex-wrap gap-2 mb-4">
+                            <span class="bg-primary-100 dark:bg-primary-900/30 text-primary-800 dark:text-primary-200 text-sm px-3 py-1 rounded-full">Python</span>
+                            <span class="bg-primary-100 dark:bg-primary-900/30 text-primary-800 dark:text-primary-200 text-sm px-3 py-1 rounded-full">FastAPI</span>
+                            <span class="bg-primary-100 dark:bg-primary-900/30 text-primary-800 dark:text-primary-200 text-sm px-3 py-1 rounded-full">MongoDB</span>
+                        </div>
+                        <div class="flex space-x-4">
+                            <a href="#" class="text-primary-600 dark:text-primary-400 hover:underline">GitHub</a>
+                            <a href="#" class="text-primary-600 dark:text-primary-400 hover:underline">Demo</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Sobre Mim Section -->
+    <section id="sobre" class="py-20 bg-gray-50 dark:bg-gray-800">
+        <div class="container mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex flex-col md:flex-row items-center justify-between">
+                <div class="md:w-2/5 mb-10 md:mb-0">
+                    <div class="relative rounded-2xl overflow-hidden shadow-xl">
+                        <img src="/assets/logo-dark.png">
+                    </div>
+                </div>
+                
+                <div class="md:w-3/5 md:pl-12">
+                    <h2 class="text-3xl font-bold mb-6">Sobre Mim</h2>
+                    <p class="text-gray-600 dark:text-gray-400 mb-6">
+                        Sou uma desenvolvedora full stack com mais de 5 anos de experiência criando soluções digitais inovadoras. 
+                        Minha paixão é transformar ideias complexas em interfaces intuitivas e experiências de usuário excepcionais.
+                    </p>
+                    <p class="text-gray-600 dark:text-gray-400 mb-8">
+                        Com background em design e desenvolvimento, consigo entender tanto as necessidades dos usuários quanto 
+                        as complexidades técnicas por trás da implementação. Estou sempre aprendendo novas tecnologias e 
+                        metodologias para me manter atualizado com as tendências do mercado.
+                    </p>
+                    
+                <h3 class="text-xl font-semibold mb-4">Minhas Habilidades</h3>
+                <div class="max-w-6xl mx-auto px-4">
+
+                    <!-- Tabs Menu -->
+                <div class="flex justify-center space-x-4 mb-8">
+                    <button onclick="showTab('linguagens')" 
+                            class="tab-btn px-4 py-2 rounded-lg font-medium bg-blue-200 text-white">
+                        Linguagens de Programação
+                    </button>
+                    <button onclick="showTab('bd')" 
+                            class="tab-btn px-4 py-2 rounded-lg font-medium bg-green-200 dark:bg-green-700 dark:text-gray-300">
+                        Base de Dados
+                    </button>
+                    <button onclick="showTab('analytics')" 
+                            class="tab-btn px-4 py-2 rounded-lg font-medium bg-yellow-200 dark:bg-yellow-700 dark:text-gray-300">
+                        Analytics
+                    </button>
+                    <button onclick="showTab('Outras')" 
+                            class="tab-btn px-4 py-2 rounded-lg font-medium bg-gray-200 dark:bg-gray-700 dark:text-gray-300">
+                        Outras
+                    </button>
+                </div>
+
+                <!-- Conteúdo das Tabs -->
+                <div id="linguagens" class="tab-content grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 gap-6">
+                <!-- Python -->
+                <div class="flex flex-col items-center p-4 bg-white dark:bg-gray-700 rounded-xl shadow-md">
+                    <div class="w-12 h-12 mb-2 flex items-center justify-center bg-blue-100 dark:bg-blue-900/30 rounded-full">
+                    <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/python/python-original.svg" class="w-8 h-8">
+                    </div>
+                    <span class="text-sm font-medium">Python</span>
+                </div>
+
+                <!-- PHP -->
+                <div class="flex flex-col items-center p-4 bg-white dark:bg-gray-700 rounded-xl shadow-md">
+                    <div class="w-12 h-12 mb-2 flex items-center justify-center bg-blue-100 dark:bg-blue-900/30 rounded-full">
+                    <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/php/php-original.svg" class="w-8 h-8">
+                    </div>
+                    <span class="text-sm font-medium">PHP</span>
+                </div>
+
+                <!-- Node.js -->
+                <div class="flex flex-col items-center p-4 bg-white dark:bg-gray-700 rounded-xl shadow-md">
+                    <div class="w-12 h-12 mb-2 flex items-center justify-center bg-green-100 dark:bg-green-900/30 rounded-full">
+                    <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/nodejs/nodejs-original.svg" class="w-8 h-8">
+                    </div>
+                    <span class="text-sm font-medium">Node.js</span>
+                </div>
+
+                <!-- JavaScript -->
+                <div class="flex flex-col items-center p-4 bg-white dark:bg-gray-700 rounded-xl shadow-md">
+                    <div class="w-12 h-12 mb-2 flex items-center justify-center bg-yellow-100 dark:bg-yellow-900/30 rounded-full">
+                    <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/javascript/javascript-original.svg" class="w-8 h-8">
+                    </div>
+                    <span class="text-sm font-medium">JavaScript</span>
+                </div>
+                </div>
+
+                <div id="bd" class="tab-content hidden grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 gap-6">
+                <!-- MongoDB -->
+                <div class="flex flex-col items-center p-4 bg-white dark:bg-gray-700 rounded-xl shadow-md">
+                    <div class="w-12 h-12 mb-2 flex items-center justify-center bg-green-100 dark:bg-green-900/30 rounded-full">
+                    <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/mongodb/mongodb-original.svg" class="w-8 h-8">
+                    </div>
+                    <span class="text-sm font-medium">MongoDB</span>
+                </div>
+
+                <div class="flex flex-col items-center p-4 bg-white dark:bg-gray-700 rounded-xl shadow-md">
+                    <div class="w-12 h-12 mb-2 flex items-center justify-center bg-blue-100 dark:bg-blue-900/30 rounded-full">
+                    <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/mysql/mysql-original.svg" class="w-8 h-8">
+                    </div>
+                    <span class="text-sm font-medium">MySQL</span>
+                </div>
+
+                <div class="flex flex-col items-center p-4 bg-white dark:bg-gray-700 rounded-xl shadow-md">
+                    <div class="w-12 h-12 mb-2 flex items-center justify-center bg-gray-100 dark:bg-gray-900/30 rounded-full">
+                    <img src="/assets/SQL-Server.png" class="w-8 h-8">
+                    </div>
+                    <span class="text-sm font-medium">SQLSERVER</span>
+                </div>
+                </div>
+
+                <div id="analytics" class="tab-content hidden grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 gap-6">
+                <!-- Excel -->
+                <div class="flex flex-col items-center p-4 bg-white dark:bg-gray-700 rounded-xl shadow-md">
+                    <div class="w-12 h-12 mb-2 flex items-center justify-center bg-green-100 dark:bg-green-900/30 rounded-full">
+                    <img src="/assets/icons-excel.png" class="w-8 h-8">
+                    </div>
+                    <span class="text-sm font-medium">Excel</span>
+                </div>
+
+                <!-- Power BI -->
+                <div class="flex flex-col items-center p-4 bg-white dark:bg-gray-700 rounded-xl shadow-md">
+                    <div class="w-12 h-12 mb-2 flex items-center justify-center bg-yellow-100 dark:bg-yellow-900/30 rounded-full">
+                    <img src="/assets/icons-powerbi.png" class="w-8 h-8">
+                    </div>
+                    <span class="text-sm font-medium">Power BI</span>
+                </div>
+
+                <!-- Postman -->
+                <div class="flex flex-col items-center p-4 bg-white dark:bg-gray-700 rounded-xl shadow-md">
+                    <div class="w-12 h-12 mb-2 flex items-center justify-center bg-orange-100 dark:bg-orange-900/30 rounded-full">
+                    <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/postman/postman-original.svg" class="w-8 h-8">
+                    </div>
+                    <span class="text-sm font-medium">Postman</span>
+                </div>
+            </div>
+
+            
+            <div id="Outras" class="tab-content hidden grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 gap-6">
+                    <!-- Git -->
+                <div class="flex flex-col items-center p-4 bg-white dark:bg-gray-700 rounded-xl shadow-md">
+                        <div class="w-12 h-12 mb-2 flex items-center justify-center bg-orange-100 dark:bg-orange-900/30 rounded-full">
+                        <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/git/git-original.svg" class="w-8 h-8">
+                        </div>
+                        <span class="text-sm font-medium">Git</span>
+                </div>
+                <div class="flex flex-col items-center p-4 bg-white dark:bg-orange-700 rounded-xl shadow-md">
+                        <div class="w-12 h-12 mb-2 flex items-center justify-center bg-orange-100 dark:bg-orange-900/30 rounded-full">
+                        <img src="/assets/html.png" class="w-8 h-8">
+                        </div>
+                        <span class="text-sm font-medium">HTML</span>
+                </div>
+                <div class="flex flex-col items-center p-4 bg-white dark:bg-blue-700 rounded-xl shadow-md">
+                        <div class="w-12 h-12 mb-2 flex items-center justify-center bg-blue-100 dark:bg-blue-900/30 rounded-full">
+                        <img src="/assets/css.png" class="w-8 h-8">
+                        </div>
+                        <span class="text-sm font-medium">CSS</span>
+                </div>
+            </div> 
+            </div>
+        </div>
+    </div>
+</div>
+</script>
+<br><br><br>
+<!-- Sessão Ferramentas de IA -->
+ <section class="bg-gradient-to-r from-blue-900 to-gray-300 py-16 px-6 md:px-12">
+        <h2 class="text-3xl font-bold text-center mb-4">
+        Ferramentas de Inteligência Artificial
+        </h2>
+        <p class="text-xl text-center mb-6">
+        Personalizo soluções com IA sempre que o cliente desejar
+        </p>
+      <!-- Swiper -->
+      <div class="swiper">
+        <div class="swiper-wrapper">
+          <!-- Slides -->
+          <div class="swiper-slide flex flex-col items-center justify-center p-6 bg-white rounded-2xl shadow-md">
+        <img src="https://upload.wikimedia.org/wikipedia/commons/0/04/ChatGPT_logo.svg" class="h-12 mb-3" alt="ChatGPT">
+        <h3 class="text-lg font-semibold text-gray-900">ChatGPT</h3>
+        <p class="text-sm text-gray-600 text-center">Para tudo – geração de ideias, textos, códigos e mais.</p>
+      </div>
+
+      <div class="swiper-slide flex flex-col items-center justify-center p-6 bg-white rounded-2xl shadow-md">
+        <img src="https://www.gstatic.com/lamda/images/logo.svg" class="h-12 mb-3" alt="NotebookLM">
+        <h3 class="text-lg font-semibold text-gray-900">NotebookLM</h3>
+        <p class="text-sm text-gray-600 text-center">Para criar resumos de estudos e insights automáticos.</p>
+      </div>
+
+      <div class="swiper-slide flex flex-col items-center justify-center p-6 bg-white rounded-2xl shadow-md">
+        <img src="/assets/tidio.png" class="h-12 mb-3" alt="Tidio">
+        <h3 class="text-lg font-semibold text-gray-900">Tidio</h3>
+        <p class="text-sm text-gray-600 text-center">Para criar chatbots para sites e negócios.</p>
+      </div>
+
+      <div class="swiper-slide flex flex-col items-center justify-center p-6 bg-white rounded-2xl shadow-md">
+        <img src="/assets/v0.png" class="h-12 mb-3" alt="v0.dev">
+        <h3 class="text-lg font-semibold text-gray-900">V0.dev</h3>
+        <p class="text-sm text-gray-600 text-center">Para criar sites e lojas virtuais de forma rápida.</p>
+      </div>
+
+      <div class="swiper-slide flex flex-col items-center justify-center p-6 bg-white rounded-2xl shadow-md">
+        <img src="/assets/grammaly.png" class="h-12 mb-3" alt="Grammarly">
+        <h3 class="text-lg font-semibold text-gray-900">Grammarly</h3>
+        <p class="text-sm text-gray-600 text-center">Para melhorar a gramática das minhas redações.</p>
+      </div>
+
+      <div class="swiper-slide flex flex-col items-center justify-center p-6 bg-white rounded-2xl shadow-md">
+        <img src="https://www.notion.so/front-static/favicon.ico" class="h-12 mb-3" alt="Notion">
+        <h3 class="text-lg font-semibold text-gray-900">Notion</h3>
+        <p class="text-sm text-gray-600 text-center">Para criar ideias claras e organizar estudos.</p>
+      </div>
+
+      <div class="swiper-slide flex flex-col items-center justify-center p-6 bg-white rounded-2xl shadow-md">
+        <img src="https://elevenlabs.io/favicon.ico" class="h-12 mb-3" alt="ElevenLabs">
+        <h3 class="text-lg font-semibold text-gray-900">ElevenLabs</h3>
+        <p class="text-sm text-gray-600 text-center">Para criar áudios realistas com IA.</p>
+      </div>
+
+      <div class="swiper-slide flex flex-col items-center justify-center p-6 bg-white rounded-2xl shadow-md">
+        <img src="/assets/nottai.png" class="h-12 mb-3" alt="Notta">
+        <h3 class="text-lg font-semibold text-gray-900">Notta AI</h3>
+        <p class="text-sm text-gray-600 text-center">Para traduzir e transcrever idiomas de vídeos.</p>
+      </div>
+
+      <div class="swiper-slide flex flex-col items-center justify-center p-6 bg-white rounded-2xl shadow-md">
+        <img src="https://perplexity.ai/favicon.ico" class="h-12 mb-3" alt="Perplexity">
+        <h3 class="text-lg font-semibold text-gray-900">Perplexity</h3>
+        <p class="text-sm text-gray-600 text-center">Para geração de conteúdos e pesquisa avançada.</p>
+      </div>
+          <!-- Adicione os outros slides da lista que você enviou -->
+        </div>
+
+        <!-- Botões de navegação -->
+        <div class="swiper-button-next"></div>
+        <div class="swiper-button-prev"></div>
+        <!-- Paginação -->
+        <div class="swiper-pagination"></div>
+    </div>    
+</section>
+
+<!-- Sessão de Serviços -->
+<section id="servicos" class="py-20 bg-gray-50">
+  <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+    
+    <!-- Título -->
+    <div class="text-center mb-16">
+      <h2 class="text-3xl font-bold text-gray-800 mb-4">Serviços</h2>
+      <p class="text-lg text-gray-600">Transformo ideias em soluções digitais completas, personalizadas para cada cliente.</p>
+    </div>
+
+    <!-- Cards de Serviços -->
+    <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-10">
+
+      <!-- Serviço 1 -->
+      <div class="bg-white rounded-2xl shadow-lg p-8 text-center hover:shadow-2xl transition-shadow duration-300">
+        <div class="flex justify-center mb-4">
+          <img src="/assets/code-xml.png" alt="Desenvolvimento Web" class="w-16 h-16 rounded-2xl">
+        </div>
+        <h3 class="text-xl font-semibold mb-2">Desenvolvimento Web</h3>
+        <p class="text-gray-600">Criação de websites modernos, responsivos e personalizados utilizando HTML, CSS, JavaScript, Node.js e PHP.</p>
+      </div>
+
+      <!-- Serviço 2 -->
+      <div class="bg-white rounded-2xl shadow-lg p-8 text-center hover:shadow-2xl transition-shadow duration-300">
+        <div class="flex justify-center mb-4">
+          <img src="/assets/chart-column.png" alt="Análise de Dados" class="w-16 h-16 rounded-2xl">
+        </div>
+        <h3 class="text-xl font-semibold mb-2">Análise de Dados</h3>
+        <p class="text-gray-600">Transformo dados em insights valiosos com Excel, Power BI e SQL, ajudando na tomada de decisões estratégicas.</p>
+      </div>
+
+      <!-- Serviço 3 -->
+      <div class="bg-white rounded-2xl shadow-lg p-8 text-center hover:shadow-2xl transition-shadow duration-300">
+        <div class="flex justify-center mb-4">
+          <img src="/assets/workflow.png" alt="Inteligência Artificial" class="w-16 h-16 rounded-2xl">
+        </div>
+        <h3 class="text-xl font-semibold mb-2">Soluções com IA</h3>
+        <p class="text-gray-600">Desenvolvimento de soluções inteligentes usando Python e ferramentas de IA, adaptadas às necessidades de cada cliente.</p>
+      </div>
+
+      <!-- Serviço 4 -->
+      <div class="bg-white rounded-2xl shadow-lg p-8 text-center hover:shadow-2xl transition-shadow duration-300">
+        <div class="flex justify-center mb-4">
+          <img src="/assets/chevrons-left-right-ellipsis.png" alt="Integração de APIs" class="w-16 h-16 rounded-2xl">
+        </div>
+        <h3 class="text-xl font-semibold mb-2">Integração de APIs</h3>
+        <p class="text-gray-600">Conecto sistemas e automatizo processos integrando APIs, bancos de dados e serviços externos.</p>
+      </div>
+
+      <!-- Serviço 5 -->
+      <div class="bg-white rounded-2xl shadow-lg p-8 text-center hover:shadow-2xl transition-shadow duration-300">
+        <div class="flex justify-center mb-4">
+          <img src="/assets/cylinder.png" alt="Banco de Dados" class="w-16 h-16 rounded-2xl rounded-2xl">
+        </div>
+        <h3 class="text-xl font-semibold mb-2">Banco de Dados</h3>
+        <p class="text-gray-600">Modelagem, implementação e otimização de bancos de dados em MySQL, SQL Server e MongoDB.</p>
+      </div>
+
+      <!-- Serviço 6 -->
+      <div class="bg-white rounded-2xl shadow-lg p-8 text-center hover:shadow-2xl transition-shadow duration-300">
+        <div class="flex justify-center mb-4">
+          <img src="/assets/handshake.png" alt="Consultoria" class="w-16 h-16 rounded-2xl" >
+        </div>
+        <h3 class="text-xl font-semibold mb-2">Consultoria Tecnológica</h3>
+        <p class="text-gray-600">Auxílio estratégico para escolher tecnologias, arquiteturas e soluções que aumentam produtividade e eficiência.</p>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- Contacto Section -->
+<section id="contacto" class="py-20 bg-white dark:bg-gray-900">
+        <div class="container mx-auto px-4 sm:px-6 lg:px-8">
+            <h2 class="text-3xl font-bold text-center mb-4">Entre em Contacto</h2>
+            <p class="text-gray-600 dark:text-gray-400 text-center mb-12 max-w-2xl mx-auto">Estou disponível para oportunidades de freelance e projetos interessantes. Vamos conversar!</p>
+            
+            <div class="max-w-lg mx-auto bg-gray-50 dark:bg-gray-800 rounded-xl p-8 border border-gray-200 dark:border-gray-700">
+                <form id="contact-form">
+                    <div class="mb-6">
+                        <label for="name" class="block text-gray-700 dark:text-gray-300 mb-2">Nome</label>
+                        <input type="text" id="name" class="w-full px-4 py-3 border border-gray-300 dark:border-gray-600 rounded-lg focus:ring-2 focus:ring-primary-500 focus:border-transparent bg-white dark:bg-gray-700 text-gray-800 dark:text-gray-200" required>
+                    </div>
+                    
+                    <div class="mb-6">
+                        <label for="email" class="block text-gray-700 dark:text-gray-300 mb-2">Email</label>
+                        <input type="email" id="email" class="w-full px-4 py-3 border border-gray-300 dark:border-gray-600 rounded-lg focus:ring-2 focus:ring-primary-500 focus:border-transparent bg-white dark:bg-gray-700 text-gray-800 dark:text-gray-200" required>
+                    </div>
+                    
+                    <div class="mb-6">
+                        <label for="message" class="block text-gray-700 dark:text-gray-300 mb-2">Mensagem</label>
+                        <textarea id="message" rows="5" class="w-full px-4 py-3 border border-gray-300 dark:border-gray-600 rounded-lg focus:ring-2 focus:ring-primary-500 focus:border-transparent bg-white dark:bg-gray-700 text-gray-800 dark:text-gray-200" required></textarea>
+                    </div>
+                    
+                    <button type="submit" class="w-full bg-primary-200 hover:bg-primary-300 text-white font-medium py-3 px-6 rounded-lg btn-hover">Enviar Mensagem</button>
+                </form>
+            </div>
+        </div>
+</section>
+
+<!-- Footer -->
+<footer class="bg-gray-100 dark:bg-gray-900 py-12 border-t border-gray-200 dark:border-gray-700">
+  <div class="container mx-auto px-4 sm:px-6 lg:px-8">
+    <!-- Grid principal -->
+    <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-8 mb-10">
+      
+      <!-- Sobre -->
+      <div>
+        <h3 class="text-xl font-bold text-gray-800 dark:text-white mb-4">Meu Portfólio</h3>
+        <p class="text-gray-600 dark:text-gray-400 text-sm leading-relaxed">
+          Sou desenvolvedora apaixonada por criar soluções criativas e eficientes.
+          Aqui você encontra meus projetos, artigos e formas de contato.
+        </p>
+      </div>
+
+      <!-- Projetos -->
+      <div>
+        <h4 class="text-lg font-semibold text-gray-800 dark:text-gray-200 mb-3">Projetos</h4>
+        <ul class="space-y-2">
+          <li><a href="#" class="text-gray-600 dark:text-gray-400 hover:text-blue-600">Aplicações Web</a></li>
+          <li><a href="#" class="text-gray-600 dark:text-gray-400 hover:text-blue-600">APIs & Back-end</a></li>
+          <li><a href="#" class="text-gray-600 dark:text-gray-400 hover:text-blue-600">Dashboards & BI</a></li>
+          <li><a href="#" class="text-gray-600 dark:text-gray-400 hover:text-blue-600">Projetos de Dados</a></li>
+        </ul>
+      </div>
+
+      <!-- Conteúdos -->
+      <div>
+        <h4 class="text-lg font-semibold text-gray-800 dark:text-gray-200 mb-3">Conteúdos</h4>
+        <ul class="space-y-2">
+          <li><a href="#" class="text-gray-600 dark:text-gray-400 hover:text-blue-500">Blog</a></li>
+          <li><a href="#" class="text-gray-600 dark:text-gray-400 hover:text-blue-500">Tutoriais</a></li>
+          <li><a href="#" class="text-gray-600 dark:text-gray-400 hover:text-blue-500">Estudos de Caso</a></li>
+          <li><a href="#" class="text-gray-600 dark:text-gray-400 hover:text-blue-500">Artigos no Medium</a></li>
+        </ul>
+      </div>
+
+      <!-- Contato -->
+      <div>
+        <h4 class="text-lg font-semibold text-gray-800 dark:text-gray-200 mb-3">Contato</h4>
+        <ul class="space-y-2">
+          <li><a href="mailto:email@exemplo.com" class="text-gray-600 dark:text-gray-400 hover:text-green-500">email@exemplo.com</a></li>
+          <li><a href="#" class="text-gray-600 dark:text-gray-400 hover:text-blue-700">LinkedIn</a></li>
+          <li><a href="#" class="text-gray-600 dark:text-gray-400 hover:text-gray-900 dark:hover:text-white">GitHub</a></li>
+          <li><a href="#" class="text-gray-600 dark:text-gray-400 hover:text-red-600">Currículo PDF</a></li>
+        </ul>
+      </div>
+
+    </div>
+
+    <!-- Linha de ícones sociais -->
+    <div class="flex justify-center space-x-6">
+      <!-- GitHub -->
+      <a href="#" class="text-gray-600 dark:text-gray-400 hover:text-gray-900 dark:hover:text-white transition-colors">
+        <svg class="w-6 h-6" fill="currentColor" viewBox="0 0 24 24">
+          <path fill-rule="evenodd" d="M12 2C6.477 2 2 6.484 2 12.017c0 4.425 2.865 8.18..."></path>
+        </svg>
+      </a>
+      <!-- YouTube -->
+      <a href="#" class="text-gray-600 dark:text-gray-400 hover:text-red-600 transition-colors">
+        <svg class="w-6 h-6" fill="currentColor" viewBox="0 0 24 24">
+          <path d="M19.615 3.184c-3.604-.246-11.631-.245-15.23 0..."></path>
+        </svg>
+      </a>
+      <!-- Twitter -->
+      <a href="#" class="text-gray-600 dark:text-gray-400 hover:text-sky-500 transition-colors">
+        <svg class="w-6 h-6" fill="currentColor" viewBox="0 0 24 24">
+          <path d="M8.29 20.251c7.547 0 11.675-6.253..."></path>
+        </svg>
+      </a>
+      <!-- LinkedIn -->
+      <a href="#" class="text-gray-600 dark:text-gray-400 hover:text-blue-700 transition-colors">
+        <svg class="w-6 h-6" fill="currentColor" viewBox="0 0 24 24">
+          <path fill-rule="evenodd" d="M12 2C6.477 2 2 6.477..."></path>
+        </svg>
+      </a>
+    </div>
+
+    <!-- Copyright -->
+    <div class="text-center mt-8 text-gray-500 dark:text-gray-400 text-sm">
+      &copy; 2025  - Engenheira Ilda Pedro. Todos os direitos reservados.
+    </div>
+  </div>
+</footer>
+
+<script>
+/**FUNÇÃO PARA MOSTRAR OS SLIDES**/
+  const swiper = new Swiper('.swiper', {
+    slidesPerView: 1, // padrão em telas pequenas
+    spaceBetween: 20,
+    loop: true,
+    autoplay: {
+      delay: 3000,
+      disableOnInteraction: false,
+    },
+    pagination: {
+      el: '.swiper-pagination',
+      clickable: true,
+    },
+    navigation: {
+      nextEl: '.swiper-button-next',
+      prevEl: '.swiper-button-prev',
+    },
+    breakpoints: {
+      640: { slidesPerView: 2 },   // tablets
+      1024: { slidesPerView: 3 },  // desktops médios
+      1280: { slidesPerView: 3 }   // desktops grandes (4 cartões)
+    }
+  });
+</script>
+<script>
+ /**SCRIPT PARA AS SESSÕES DAS HABILIDADES**/
+  function showTab(tabId) {
+    document.querySelectorAll('.tab-content').forEach(el => el.classList.add('hidden'));
+    document.querySelectorAll('.tab-btn').forEach(el => el.classList.remove('bg-blue-600','text-white'));
+    document.getElementById(tabId).classList.remove('hidden');
+    event.target.classList.add('bg-blue-600','text-white');
+  }
+</script>
+</body>
+</html>
